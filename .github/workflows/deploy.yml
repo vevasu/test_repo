@@ -1,9 +1,10 @@
 name: Simple HTML Deploy
+
 on:
   push:
     branches:
       - main
-      - feature/*   # triggers on any branch
+      - feature/*
 
 jobs:
   deploy:
