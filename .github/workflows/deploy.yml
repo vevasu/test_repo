@@ -1,0 +1,19 @@
+name: Simple HTML Deploy
+on:
+  push:
+    branches:
+      - main
+      - feature/*   # triggers on any branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: CI step
+        run: echo "CI check: HTML file is present"
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
